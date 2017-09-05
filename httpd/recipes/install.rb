@@ -1,1 +1,1 @@
-package 'httpd'
+package node['httpd']['package_name']

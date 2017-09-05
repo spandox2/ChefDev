@@ -19,13 +19,14 @@ describe 'httpd::default' do
       expect { chef_run }.to_not raise_error
     end
     it 'includes the install recipe' do
-      expect(chef_run).to include_recipe('httpd::install')
+      expect(chef_run).to include_recipe("#{chef_run.node[:httpd][:cookbookname]}::install")
+
     end
     it 'includes the configuration recipe' do
-      expect(chef_run).to include_recipe('httpd::configuration')
+      expect(chef_run).to include_recipe("#{chef_run.node[:httpd][:cookbookname]}::configuration")
     end
     it 'includes the service recipe' do
-      expect(chef_run).to include_recipe('httpd::service')
+      expect(chef_run).to include_recipe("#{chef_run.node[:httpd][:cookbookname]}::service")
     end
   end
 end
