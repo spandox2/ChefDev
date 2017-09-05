@@ -19,10 +19,10 @@ describe 'httpd::service' do
       expect { chef_run }.to_not raise_error
     end
     it 'Enables a service with an explicit action' do
-      expect(chef_run).to enable_service('httpd')
+      expect(chef_run).to enable_service("#{chef_run.node[:httpd][:package_name]}")
     end
     it 'Starts a service with an explicit action' do
-      expect(chef_run).to start_service('httpd')
+      expect(chef_run).to start_service("#{chef_run.node[:httpd][:package_name]}")
     end 
   end
 end
