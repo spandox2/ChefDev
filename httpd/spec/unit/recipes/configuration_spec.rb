@@ -29,4 +29,26 @@ describe 'httpd::configuration' do
       end
     end
   end
+  context 'When all attributes are default, on an Ubuntu 14.04' do
+    let(:chef_run) do
+      # for a complete list of available platforms and versions see:
+      # https://github.com/customink/fauxhai/blob/master/PLATFORMS.md
+      runner = ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '14.04')
+      runner.converge(described_recipe)
+    end
+
+    it 'converges successfully' do
+      expect { chef_run }.to_not raise_error
+    end
+
+    it 'creates a template with the default action' do
+      expect(chef_run).to create_template(chef_run.node[:httpd][:index_location].to_s)
+    end
+
+    context 'file' do
+      it 'renders the file' do
+        expect(chef_run).to render_file(chef_run.node[:httpd][:index_location].to_s).with_content('Welcome Home')
+      end
+    end
+  end
 end
