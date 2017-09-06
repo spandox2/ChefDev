@@ -23,7 +23,7 @@ describe 'httpd::service' do
     end
     it 'Starts a service with an explicit action' do
       expect(chef_run).to start_service('httpd')
-    end 
+    end
   end
   context 'When all attributes are default, on an Ubuntu 14.04' do
     let(:chef_run) do
@@ -41,7 +41,6 @@ describe 'httpd::service' do
     end
     it 'Starts a service with an explicit action' do
       expect(chef_run).to start_service('httpd')
-    end 
+    end
   end
-
 end

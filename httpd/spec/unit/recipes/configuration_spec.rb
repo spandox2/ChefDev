@@ -18,12 +18,14 @@ describe 'httpd::configuration' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
+
     it 'creates a template with the default action' do
-      expect(chef_run).to create_template("#{chef_run.node[:httpd][:index_location]}")
+      expect(chef_run).to create_template(chef_run.node[:httpd][:index_location].to_s)
     end
+
     context 'file' do
       it 'renders the file' do
-        expect(chef_run).to render_file("#{chef_run.node[:httpd][:index_location]}").with_content('Welcome Home')
+        expect(chef_run).to render_file(chef_run.node[:httpd][:index_location].to_s).with_content('Welcome Home')
       end
     end
   end
