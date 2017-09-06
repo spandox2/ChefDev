@@ -1,8 +1,19 @@
-<html>
-<head><title>Test</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Welcome Home!</title>
+</head>
+
 <body>
-<h1>Welcome Home!<h1>
-<h2>ipaddress: <%= node['ipaddress'] %></h2>
-<h2>hostname: <%= node['hostname'] %></h2>
+  <h1>Welcome Home!</h1>
+  <table>
+    <tr><th>Thing</th><th>Data</th></tr>
+    <tr><td>ipaddress:</td><td><%= node['ipaddress'] %></td></tr>
+    <tr><td>hostname:</td><td><%= node['hostname'] %></td></tr>
+  </table>
 </body>
+
 </html>
