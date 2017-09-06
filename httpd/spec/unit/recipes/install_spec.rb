@@ -19,7 +19,7 @@ describe 'httpd::install' do
       expect { chef_run }.to_not raise_error
     end
     it 'installs the corisponding package' do
-      expect(chef_run).to install_package(chef_run.node[:httpd][:package_name].to_s)
+      expect(chef_run).to install_package(chef_run.node[:httpd][:package_name])
     end
   end
   context 'When all attributes are default, on an Ubuntu 14.04' do
@@ -34,7 +34,7 @@ describe 'httpd::install' do
       expect { chef_run }.to_not raise_error
     end
     it 'installs the corisponding package' do
-      expect(chef_run).to install_package(chef_run.node[:httpd][:package_name].to_s)
+      expect(chef_run).to install_package(chef_run.node[:httpd][:package_name])
     end
   end
 end

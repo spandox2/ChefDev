@@ -20,12 +20,12 @@ describe 'httpd::configuration' do
     end
 
     it 'creates a template with the default action' do
-      expect(chef_run).to create_template(chef_run.node[:httpd][:index_location].to_s)
+      expect(chef_run).to create_template(chef_run.node[:httpd][:index_location])
     end
 
     context 'file' do
       it 'renders the file' do
-        expect(chef_run).to render_file(chef_run.node[:httpd][:index_location].to_s).with_content('Welcome Home')
+        expect(chef_run).to render_file(chef_run.node[:httpd][:index_location]).with_content('Welcome Home')
       end
     end
   end
@@ -42,12 +42,12 @@ describe 'httpd::configuration' do
     end
 
     it 'creates a template with the default action' do
-      expect(chef_run).to create_template(chef_run.node[:httpd][:index_location].to_s)
+      expect(chef_run).to create_template(chef_run.node[:httpd][:index_location])
     end
 
     context 'file' do
       it 'renders the file' do
-        expect(chef_run).to render_file(chef_run.node[:httpd][:index_location].to_s).with_content('Welcome Home')
+        expect(chef_run).to render_file(chef_run.node[:httpd][:index_location]).with_content('Welcome Home')
       end
     end
   end
