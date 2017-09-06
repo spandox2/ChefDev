@@ -17,3 +17,13 @@ action :create do
     content "<h1>Welcome #{site_name}!</h1>"
   end
 end
+
+action :remove do
+  directory "/srv/apache/#{site_name}/html" do
+    action :delete
+  end
+  file "/srv/apache/#{site_name}/html/index.html" do
+    action :delete
+  end
+end
+
