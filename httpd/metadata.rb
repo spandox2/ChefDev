@@ -1,10 +1,10 @@
 name 'httpd'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Mike Sandler'
+maintainer_email 'michael.sandler@state.de.us'
 license 'All Rights Reserved'
 description 'Installs/Configures httpd'
 long_description 'Installs/Configures httpd'
-version '0.1.0'
+version '0.2.1'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
 # The `issues_url` points to the location where issues for this cookbook are
