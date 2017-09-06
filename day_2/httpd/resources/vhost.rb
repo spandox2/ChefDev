@@ -26,4 +26,3 @@ action :remove do
     action :delete
   end
 end
-

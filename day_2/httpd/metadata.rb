@@ -16,3 +16,5 @@ issues_url 'https://github.com/spandox2/ChefDev/tree/master/day_2/httpd/issues' 
 source_url 'https://github.com/spandox2/ChefDev/tree/master/day_2/httpd' if respond_to?(:source_url)
 supports 'centos', '> 6.04'
 supports 'ubuntu', '> 14.04'
+
+depends 'ohai'
