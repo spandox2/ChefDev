@@ -4,6 +4,7 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-service node[:httpd][:service_name] do
+service 'httpd' do
+  service_name node[:httpd][:service_name]
   action [:enable, :start]
 end
